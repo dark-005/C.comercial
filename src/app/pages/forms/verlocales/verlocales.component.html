@@ -1,0 +1,46 @@
+<nb-card>
+    <nb-card-header>
+      Locales
+    </nb-card-header>
+    <nb-card-body>
+      <div *ngIf="this.rol == 'Admin'">
+        <button class="boton-crear" nbButton status="primary" outline shape="shapes" routerLink='../crearlocal'>
+          Crear
+        </button></div>
+          <button *ngIf="this.rol == 'Representante'" class="boton-crear" nbButton status="primary" outline shape="shapes" routerLink="../editarlocal/{{this.cambrepre}}">
+            Editar Mi Local
+          </button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Subtipo</th>
+            <th>Representante</th>
+            <th>Contacto</th>
+            <th>Estado</th>
+            <th *ngIf="this.rol == 'Admin'">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let local of locales">
+            <td>{{ local.id }}</td>
+            <td>{{ local.nombre }}</td>
+            <td>{{ local.tipo }}</td>
+            <td>{{ local.subtipo }}</td>
+            <td>{{ local.representante }}</td>
+            <td>{{ local.contacto }}</td>
+            <td>{{ local.estado }}</td>
+            <td *ngIf="this.rol == 'Admin'"><button class="boton-crear" nbButton status="primary" outline shape="shapes" routerLink="../editarlocal/{{local.id}}">
+              Editar
+            </button><button class="boton-crear" nbButton status="danger" outline [shape]="shapes" (click)="deleteData(local.id)">
+              Borrar
+            </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </nb-card-body>
+  </nb-card>
+  

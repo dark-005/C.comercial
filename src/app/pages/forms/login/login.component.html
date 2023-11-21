@@ -1,0 +1,12 @@
+
+  <form (ngSubmit)="start()">
+    <h3>Inicia Sesion</h3>
+  
+    <label for="username">Username</label>
+    <input type="text" name ="userName" [(ngModel)]="loginObj.UserName" placeholder="Email" id="username">
+  
+    <label for="password">Password</label>
+    <input type="password" name ="password" [(ngModel)]="loginObj.Password" placeholder="Contraseña" id="password">
+  
+    <button style="color: black" (click)="recargarPagina()">Iniciar Sesion</button>
+  </form>

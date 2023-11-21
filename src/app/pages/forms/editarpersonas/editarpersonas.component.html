@@ -1,0 +1,66 @@
+<div class="row"> 
+    <div class="col-md-6">     
+      <nb-card>
+        <nb-card-header>Nueva Persona</nb-card-header>
+        <nb-card-body>
+          <form (ngSubmit)="updatePersona()">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName" class="label">Nombres</label>
+                  <input type="text" nbInput fullWidth id="PersonaName" placeholder="Nombre" name="nombre" [(ngModel)]="persona.nombre">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Documento</label>
+                  <input type="text" nbInput fullWidth id="Personaid" placeholder="Documento" name="id" [(ngModel)]="persona.id">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Email</label>
+                  <input type="text" nbInput fullWidth id="PersonaEmail" placeholder="Email" name="email" [(ngModel)]="persona.email">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputWebsite" class="label">Telefono</label>
+                  <input type="text" nbInput fullWidth id="PersonaPhone" placeholder="Telefono" name="contacto" [(ngModel)]="persona.contacto">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName" class="label">Contraseña</label>
+                  <input type="password" nbInput fullWidth id="PersonaPass" placeholder="Password" name="contrasena" [(ngModel)]="persona.contrasena">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputWebsite" class="label">Confirmar Contraseña</label>
+                  <input type="password" nbInput fullWidth id="PersonaPass2" placeholder="Password">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="inputFirstName" class="label">Rol</label>
+                  <nb-select fullWidth placeholder="Seleccione..." name="rol" [(ngModel)]="persona.rol">
+                    <nb-option value="vigilante">Vigilante</nb-option>
+                    <nb-option value="representante">Dueño</nb-option>
+                  </nb-select>
+                </div>
+              </div>
+            </div>
+            <button type="submit" nbButton>Submit</button>
+          </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+    

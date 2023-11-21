@@ -1,0 +1,102 @@
+<div class="row"> 
+    <div class="col-md-6">     
+      <nb-card>
+        <nb-card-header>Editar Local</nb-card-header>
+        <nb-card-body>
+          <form (ngSubmit)="updateLocal()">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName" class="label">Nombre</label>
+                  <input type="text" name="nombre"nbInput fullWidth id="inputFirstName" placeholder="Nombre" [(ngModel)]="local.nombre">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputLastName" class="label">Local</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="local" [(ngModel)]="local.id">
+                      <nb-option value="101">101</nb-option>
+                      <nb-option value="102">102</nb-option>
+                      <nb-option value="201">201</nb-option>
+                      <nb-option value="202">202</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Tipo</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="tipo" [(ngModel)]="local.tipo">
+                      <nb-option value="Alimento" (click)="mostrarsubtipos(fruta,ropa,deporte);fruta = true">Alimento</nb-option>
+                      <nb-option value="Ropa" (click)="mostrarsubtipos(fruta,ropa,deporte); ropa = true;fruta = false">Ropa</nb-option>
+                      <nb-option value="Deportes" (click)="mostrarsubtipos(fruta,ropa,deporte); deporte = true; fruta = false">Deportes</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+              <div *ngIf="ropa" class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Subtipo</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="subtipo" [(ngModel)]="local.subtipo">
+                      <nb-option value="Hombre">Hombre</nb-option>
+                      <nb-option value="Mujer">Mujer</nb-option>
+                      <nb-option value="Niños">Niños</nb-option>
+                      <nb-option value="Mixto">Mixto</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+              <div *ngIf="deporte" class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Subtipo</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="subtipo" [(ngModel)]="local.subtipo">
+                      <nb-option value="Futbol">Futbol</nb-option>
+                      <nb-option value="Baloncesto">Baloncesto</nb-option>
+                      <nb-option value="Voleibol">Voleibol</nb-option>
+  
+                    </nb-select>
+                </div>
+              </div>
+              <div *ngIf="fruta" class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Subtipo</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="subtipo" [(ngModel)]="local.subtipo">
+                      <nb-option value="Frutas">Frutas</nb-option>
+                      <nb-option value="Verduras">Verduras</nb-option>
+                      <nb-option value="Granos">Granos</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+  
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputWebsite" class="label">Telefono</label>
+                  <input type="text" nbInput fullWidth id="inputWebsite" placeholder="Telefono" name="contacto" [(ngModel)]="local.contacto">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName" class="label">Nombre del Representante</label>
+                  <input type="text" nbInput fullWidth id="inputWebsite" placeholder="Nombre del representante" name="contacto" [(ngModel)]="local.representante">
+                </div>
+              </div> 
+            </div>  
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="inputWebsite" class="label">Estado</label>
+                    <nb-select fullWidth placeholder="Seleccione..." name="estado" [(ngModel)]="local.estado">
+                      <nb-option value="Activo">Activo</nb-option>
+                      <nb-option value="En deuda">En deuda</nb-option>
+                    </nb-select>
+                  </div>
+                </div>
+              </div>
+            <button type="submit" nbButton>Actualizar</button>
+          </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+    
